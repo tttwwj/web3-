@@ -1,2 +1,2 @@
-exports.deployContract = require("./tasks/deploy-fundMe");
-exports.interactContract = require("./tasks/interact-fundMe");
+exports.deployContract = require("./deploy-fundMe");
+exports.interactContract = require("./interact-fundMe");

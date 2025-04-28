@@ -14,7 +14,7 @@ async function main() {
      console.log(`ETHERSCAN_API_KEY ${process.env.ETHERSCAN_API_KEY}`);
      if(hre.network.config.chainId == 11155111 && process.env.ETHERSCAN_API_KEY) {
          console.log("Waiting for 5 confirmations")
-         await fundMe.deploymentTransaction().wait(10) 
+         await fundMe.deploymentTransaction().wait(5) 
          await verifyFundMe(fundMe.target, [10])
      } else {
          console.log("verification skipped..")
