@@ -2,6 +2,8 @@ require("@nomicfoundation/hardhat-toolbox");
 require("@chainlink/env-enc").config()
 require("./tasks")
 require("hardhat-deploy")
+require("@nomicfoundation/hardhat-ethers");
+require("hardhat-deploy-ethers");
 
 const SEPOLIA_URL = process.env.SEPOLIA_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
@@ -15,6 +17,9 @@ setGlobalDispatcher(proxyAgent);
 module.exports = {
   solidity: "0.8.28",
   defaultNetwork: "hardhat",
+  mocha: {
+    timeout: 300000,
+  },
   networks: {
     sepolia: {
       url: SEPOLIA_URL,
